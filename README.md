@@ -91,8 +91,9 @@ Overrides are available for:
 ### Classes and Parameters
 * `pm_profiler`: The main module class [Code Detail](https://github.com/exodusftw/puppet-pm-profiler/tree/master/manifests/init.pp)
 * `pm_profiler::params`: Default Params class [Code Detail](https://github.com/exodusftw/puppet-pm-profiler/tree/master/manifests/params.pp)
+* `pm_profiler::install`: Manages installation of `pm-profiler` package [Code Detail](https://github.com/exodusftw/puppet-pm-profiler/tree/master/manifests/install.pp)
 * `pm_profiler::config`: Manages configuration in `/etc/pm-profiler.conf` [Code Detail](https://github.com/exodusftw/puppet-pm-profiler/tree/master/manifests/config.pp)
-* `pm_profiler::proc`: Manages and Ensures Agent process are running [Code Detail](https://github.com/exodusftw/puppet-pm-profiler/tree/master/manifests/proc.pp)
+* `pm_profiler::service`: Manages and Ensures Agent process are running [Code Detail](https://github.com/exodusftw/puppet-pm-profiler/tree/master/manifests/proc.pp)
 
 ### Defined Types Provided
 * `pm_profiler::pm_config`: Enables creation and application of custom power management profile [Code Detail](https://github.com/exodusftw/puppet-pm-profiler/tree/master/manifests/pm_config.pp)
