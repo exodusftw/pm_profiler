@@ -27,6 +27,6 @@ class pm_profiler (
   }
   else {
     #FAIL DUE TO UNKNOWN OS
-    fail 'SLES only support os for pm_profiler'
+    fail 'SLES only supported os for pm_profiler'
   }
 }

@@ -20,7 +20,7 @@
 6. [Development - Guide for contributing to the module](#development)
 7. [Extensibility](#extensibility)
 8. [Authors](#authors)
-9. [Change Log](https://github.com/exodusftw/puppet-ovpa/tree/master/CHANGELOG.md)
+9. [Change Log](https://github.com/exodusftw/puppet-pm-profiler/tree/master/CHANGELOG.md)
 
 ## Overview
 
@@ -49,10 +49,8 @@ Manages the installation, configuration, and maintenance of the SUSE Enterprise 
 
 **Also - Please update the following variables for your environment as necessary in** [params.pp](https://github.com/exodusftw/puppet-pm-profiler/tree/master/manifests/params.pp)
 
-* `placeholder`:
-  * Agent Config Variable 
-    * Namespace: ``
-    * Variable: ``
+* `active_pm_profile`: Power management profile to enable
+* `pm_profiler_version`: Version of pm-profiler package to install - defaults to `present`
 
 ### What Is Managed
 
@@ -76,12 +74,14 @@ No dependent classes/modules required
 Example:
 ```puppet
 class { 'pm-profiler':
-  placeholder => $pm-profiler::params::placeholder ,
+  active_pm_profile   => 'low_latency' ,
+  pm_profiler_version => 'latest',
 }
 ```
 
 ### ENC Setup
 Overrides are available for:
+* `active_pm_profile` - Power management profile to activate
 * `pm_profiler_version` - Defaults to `latest`
   * To force installation of latest version - ensure latest RPM's are present in backend YUM/SMT Repo
   * Configure necessary Matcher values in ENC and set value to: `latest`
@@ -89,17 +89,40 @@ Overrides are available for:
 ## Reference
 
 ### Classes and Parameters
-* `pm-profiler`: The main module class [Code Detail](https://github.com/exodusftw/puppet-ovpa/tree/master/manifests/init.pp)
-  * `policy_server`: Sets the Agent Config Variable for: `MANAGER` to register with proper management system
-* `pm-profiler::params`: Default Params class [Code Detail](https://github.com/exodusftw/puppet-ovpa/tree/master/manifests/params.pp)
-* `pm-profiler::proc`: Manages and Ensures Agent process are running [Code Detail](https://github.com/exodusftw/puppet-ovpa/tree/master/manifests/proc.pp)
+* `pm-profiler`: The main module class [Code Detail](https://github.com/exodusftw/puppet-pm-profiler/tree/master/manifests/init.pp)
+* `pm-profiler::params`: Default Params class [Code Detail](https://github.com/exodusftw/puppet-pm-profiler/tree/master/manifests/params.pp)
+* `pm-profiler::proc`: Manages and Ensures Agent process are running [Code Detail](https://github.com/exodusftw/puppet-pm-profiler/tree/master/manifests/proc.pp)
 
 ### Defined Types Provided
-None
+* `pm_profiler::config`: Enables creation and application of custom power management profile
+* `available type attributes`:
+  * `name`
+  * `description`
+  * `cpu_governor`
+  * `read_ahead_kb`
+  * `power_savings`
+  * `sata_alpm`
+  * `hal_disable_polling`
+  * `dirty_writeback_centisecs`
+  * `read_ahead_kb`
+
+Example:
+```puppet
+pm_profiler::config  {
+  name                      => 'sap_hana',
+  description               => 'Power management profile for sap_hana',
+  cpu_governor              => 'performance',
+  read_ahead_kb             => '',
+  power_savings             => '',
+  sata_alpm                 => '',
+  hal_disable_polling       => '',
+  dirty_writeback_centisecs => '',
+  read_ahead_kb             => '',
+}
+```
 
 ### Facts Provided
-* Facts - [Additional Code Detail](https://github.com/exodusftw/puppet-pm-profiler/tree/master/lib/facter/opcagtfacts.rb)
-  * `default_pm_profile`: Default pm-profile to load on boot
+None
 
 ## Limitations
 
