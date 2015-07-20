@@ -1,0 +1,26 @@
+{
+  "name": "exodusftw/pm-profiler",
+  "version": "0.0.1",
+  "author": "jeremy.grant@outlook.com",
+  "license": "Apache-2.0",
+  "summary": "Manages the configuration of Power Management profiles on Suse Enterprise LInux",
+  "source": "https://github.com/exodusftw/puppet-pm-profiler",
+  "project_page": "https://github.com/exodusftw/puppet-pm-profiler",
+  "issues_url": "https://github.com/exodusftw/puppet-pm-profiler/issues",
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "SUSE",
+      "operatingsystemrelease": [
+        "10",
+        "11",
+	"12"
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_range": ">= 3.0.0"
+    }
+  ]
+}
