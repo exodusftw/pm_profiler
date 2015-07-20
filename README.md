@@ -95,7 +95,7 @@ Overrides are available for:
 * `pm_profiler::proc`: Manages and Ensures Agent process are running [Code Detail](https://github.com/exodusftw/puppet-pm-profiler/tree/master/manifests/proc.pp)
 
 ### Defined Types Provided
-* `pm_profiler::config`: Enables creation and application of custom power management profile
+* `pm_profiler::pm_config`: Enables creation and application of custom power management profile [Code Detail](https://github.com/exodusftw/puppet-pm-profiler/tree/master/manifests/pm_config.pp)
 * `available type attributes`:
   * `name`
   * `description`
@@ -109,7 +109,7 @@ Overrides are available for:
 
 Example:
 ```puppet
-pm_profiler::config  {
+pm_profiler::pm_config  {
   name                      => 'sap_hana',
   description               => 'Power management profile for sap_hana',
   cpu_governor              => 'performance',

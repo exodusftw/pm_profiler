@@ -1,5 +1,5 @@
 # == Class: pm_profiler
-define pm_profiler::config (
+define pm_profiler::pm_config (
   $name                      = ''
   $description               = ''
   $cpu_governor              = ''
