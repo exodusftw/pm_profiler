@@ -1,6 +1,6 @@
 {
   "name": "exodusftw-pm_profiler",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "author": "jeremy.grant@outlook.com",
   "license": "Apache-2.0",
   "summary": "Manages the configuration of Power Management profiles on Suse Enterprise LInux",
