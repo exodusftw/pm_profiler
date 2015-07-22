@@ -67,7 +67,7 @@ Manages the installation, configuration, and maintenance of the SUSE Enterprise 
 * exec entries
 
 ### Dependencies
-* `puppetlabs/stdlib`
+No dependent classes/modules required
 
 ## Usage
 Example:
