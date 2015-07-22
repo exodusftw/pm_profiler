@@ -107,8 +107,8 @@ Overrides are available for:
 Example:
 ```puppet
 pm_profiler::pm_config  { 'sap_hana':
-  description               => 'Power management profile for sap_hana',
-  cpu_governor              => 'performance',
+  description  => 'Power management profile for sap_hana',
+  cpu_governor => 'performance',
 }
 ```
 
