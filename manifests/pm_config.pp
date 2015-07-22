@@ -1,14 +1,13 @@
 # == Class: pm_profiler
 define pm_profiler::pm_config (
-  $name                      = ''
-  $description               = ''
-  $cpu_governor              = ''
-  $power_savings             = ''
-  $sata_alpm                 = ''
-  $hal_disable_polling       = ''
-  $dirty_writeback_centisecs = ''
-  $read_ahead_kb             = ''
-) inherits pm_profiler::params {
+  $description               = '',
+  $cpu_governor              = '',
+  $power_savings             = '',
+  $sata_alpm                 = '',
+  $hal_disable_polling       = '',
+  $dirty_writeback_centisecs = '',
+  $read_ahead_kb             = '',
+) {
 
   file { "/etc/pm-profiler/${name}":
     ensure  => directory,
