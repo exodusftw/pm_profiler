@@ -1,4 +1,4 @@
-# pm-profiler
+# pm_profiler
 
 #### Table of Contents
 
