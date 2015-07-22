@@ -103,6 +103,11 @@ Overrides are available for:
   * `hal_disable_polling`
   * `dirty_writeback_centisecs`
   * `read_ahead_kb`
+  * `external_hook`
+  * `power_button_hook`
+  * `ondemand_up_threshold`
+  * `ondemand_sampling_rate`
+  * `ondemand_powersave_bias`
 
 Example:
 ```puppet
