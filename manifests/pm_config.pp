@@ -11,11 +11,11 @@ define pm_profiler::pm_config (
 ) inherits pm_profiler::params {
 
   file { "/etc/pm-profiler/${name}":
-    ensure => directory,
-    owner  => 'root',
-    group  => 'root', 
-    mode   => '0644',
-    require => [Package['pm-profiler'], 
+    ensure  => directory,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+    require => [Package['pm-profiler'],
                 File['/etc/pm-profiler']
     ],
   }
@@ -30,7 +30,7 @@ define pm_profiler::pm_config (
   }
 
   file_line { "set_profile_${name}":
-    line    => "",
+    line    => "PM_PROFILER_PROFILE=${name}",
     target  => '/etc/pm-profiler.conf',
     match   => '^PM_PROFILER_PROFILE\=.*$',
     notify  => Service['pm-profiler'],
