@@ -4,10 +4,11 @@ class pm_profiler::config (
 
   #Management of default pm-profiler config file
   file { '/etc/pm-profiler.conf':
-    ensure => file,
-    mode   => '0644',
-    owner  => 'root',
-    group  => 'root',
-    notify => Service['pm_profiler'],
+    ensure  => file,
+    mode    => '0644',
+    owner   => 'root',
+    group   => 'root',
+    require => Package['pm-profiler'],
+    notify  => Service['pm-profiler'],
   }
 }

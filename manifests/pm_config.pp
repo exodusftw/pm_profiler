@@ -15,7 +15,7 @@ define pm_profiler::pm_config (
     group   => 'root',
     mode    => '0644',
     require => [Package['pm-profiler'],
-                File['/etc/pm-profiler']
+                File['/etc/pm-profiler'],
     ],
   }
 
