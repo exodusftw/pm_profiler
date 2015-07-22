@@ -13,7 +13,6 @@
 # Jeremy Grant <Jeremy.Grant@outlook.com>
 #
 class pm_profiler (
-  $active_pm_profile   = $pm_profiler::params::active_pm_profile ,
   $pm_profiler_version = $pm_profiler::params::pm_profiler_version ,
 ) inherits pm_profiler::params {
 
