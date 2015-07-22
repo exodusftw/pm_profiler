@@ -27,8 +27,8 @@
 Manages installation and configuration of SUSE power management profiles
 
 To retrieve from Puppet Forge either:
-* [Click Here](https://forge.puppetlabs.com/exodusftw/pm-profiler)
-* Execute Command `puppet module install exodusftw-pm-profiler`
+* [Click Here](https://forge.puppetlabs.com/exodusftw/pm_profiler)
+* Execute Command `puppet module install exodusftw-pm_profiler`
 
 ## Module Description
 
@@ -49,7 +49,6 @@ Manages the installation, configuration, and maintenance of the SUSE Enterprise 
 
 **Also - Please update the following variables for your environment as necessary in** [params.pp](https://github.com/exodusftw/puppet-pm-profiler/tree/master/manifests/params.pp)
 
-* `active_pm_profile`: Power management profile to enable
 * `pm_profiler_version`: Version of pm-profiler package to install - defaults to `present`
 
 ### What Is Managed
@@ -74,14 +73,12 @@ No dependent classes/modules required
 Example:
 ```puppet
 class { 'pm-profiler':
-  active_pm_profile   => 'low_latency' ,
   pm_profiler_version => 'latest',
 }
 ```
 
 ### ENC Setup
 Overrides are available for:
-* `active_pm_profile` - Power management profile to activate
 * `pm_profiler_version` - Defaults to `latest`
   * To force installation of latest version - ensure latest RPM's are present in backend YUM/SMT Repo
   * Configure necessary Matcher values in ENC and set value to: `latest`
@@ -112,12 +109,6 @@ Example:
 pm_profiler::pm_config  { 'sap_hana':
   description               => 'Power management profile for sap_hana',
   cpu_governor              => 'performance',
-  read_ahead_kb             => '',
-  power_savings             => '',
-  sata_alpm                 => '',
-  hal_disable_polling       => '',
-  dirty_writeback_centisecs => '',
-  read_ahead_kb             => '',
 }
 ```
 
