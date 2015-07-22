@@ -30,7 +30,7 @@ define pm_profiler::pm_config (
 
   file_line { "set_profile_${name}":
     line    => "PM_PROFILER_PROFILE=${name}",
-    target  => '/etc/pm-profiler.conf',
+    path    => '/etc/pm-profiler.conf',
     match   => '^PM_PROFILER_PROFILE\=.*$',
     notify  => Service['pm-profiler'],
     require => [File["/etc/pm-profiler/${name}"],
