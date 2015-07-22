@@ -98,7 +98,6 @@ Overrides are available for:
 ### Defined Types Provided
 * `pm_profiler::pm_config`: Enables creation and application of custom power management profile [Code Detail](https://github.com/exodusftw/puppet-pm-profiler/tree/master/manifests/pm_config.pp)
 * `available type attributes`:
-  * `name`
   * `description`
   * `cpu_governor`
   * `read_ahead_kb`
@@ -110,8 +109,7 @@ Overrides are available for:
 
 Example:
 ```puppet
-pm_profiler::pm_config  {
-  name                      => 'sap_hana',
+pm_profiler::pm_config  { 'sap_hana':
   description               => 'Power management profile for sap_hana',
   cpu_governor              => 'performance',
   read_ahead_kb             => '',
