@@ -16,6 +16,8 @@ class pm_profiler (
   $pm_profiler_version = $pm_profiler::params::pm_profiler_version ,
 ) inherits pm_profiler::params {
 
+  include ::stdlib
+
   if $::operatingsystem == 'SLES' {
     include ::pm_profiler::install
     include ::pm_profiler::config
