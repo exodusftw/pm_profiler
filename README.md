@@ -79,7 +79,7 @@ class { 'pm-profiler':
 
 ### ENC Setup
 Overrides are available for:
-* `pm_profiler_version` - Defaults to `latest`
+* `pm_profiler_version` - Defaults to `present`
   * To force installation of latest version - ensure latest RPM's are present in backend YUM/SMT Repo
   * Configure necessary Matcher values in ENC and set value to: `latest`
 
