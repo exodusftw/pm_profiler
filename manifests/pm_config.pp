@@ -1,12 +1,17 @@
 # == Class: pm_profiler
 define pm_profiler::pm_config (
-  $description               = '',
   $cpu_governor              = '',
-  $power_savings             = '',
-  $sata_alpm                 = '',
-  $hal_disable_polling       = '',
+  $description               = '',
   $dirty_writeback_centisecs = '',
+  $external_hook             = '',
+  $hal_disable_polling       = '',
+  $ondemand_powersave_bias   = '',
+  $ondemand_sampling_rate    = '',
+  $ondemand_up_threshold     = '',
+  $power_button_hook         = '',
+  $power_savings             = '',
   $read_ahead_kb             = '',
+  $sata_alpm                 = '',
 ) {
 
   file { "/etc/pm-profiler/${name}":
