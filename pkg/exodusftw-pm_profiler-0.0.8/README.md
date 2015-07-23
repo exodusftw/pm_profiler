@@ -1,4 +1,4 @@
-# pm_profiler
+# pm-profiler
 
 #### Table of Contents
 
@@ -67,7 +67,7 @@ Manages the installation, configuration, and maintenance of the SUSE Enterprise 
 * exec entries
 
 ### Dependencies
-* `puppetlabs/stdlib`
+No dependent classes/modules required
 
 ## Usage
 Example:
@@ -90,7 +90,7 @@ Overrides are available for:
 * `pm_profiler::params`: Default Params class [Code Detail](https://github.com/exodusftw/puppet-pm-profiler/tree/master/manifests/params.pp)
 * `pm_profiler::install`: Manages installation of `pm-profiler` package [Code Detail](https://github.com/exodusftw/puppet-pm-profiler/tree/master/manifests/install.pp)
 * `pm_profiler::config`: Manages configuration in `/etc/pm-profiler.conf` [Code Detail](https://github.com/exodusftw/puppet-pm-profiler/tree/master/manifests/config.pp)
-* `pm_profiler::service`: Manages and Ensures Agent process are running [Code Detail](https://github.com/exodusftw/puppet-pm-profiler/tree/master/manifests/service.pp)
+* `pm_profiler::service`: Manages and Ensures Agent process are running [Code Detail](https://github.com/exodusftw/puppet-pm-profiler/tree/master/manifests/proc.pp)
 
 ### Defined Types Provided
 * `pm_profiler::pm_config`: Enables creation and application of custom power management profile [Code Detail](https://github.com/exodusftw/puppet-pm-profiler/tree/master/manifests/pm_config.pp)
@@ -103,11 +103,6 @@ Overrides are available for:
   * `hal_disable_polling`
   * `dirty_writeback_centisecs`
   * `read_ahead_kb`
-  * `external_hook`
-  * `power_button_hook`
-  * `ondemand_up_threshold`
-  * `ondemand_sampling_rate`
-  * `ondemand_powersave_bias`
 
 Example:
 ```puppet

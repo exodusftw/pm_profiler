@@ -1,17 +1,12 @@
 # == Class: pm_profiler
 define pm_profiler::pm_config (
-  $cpu_governor              = '',
   $description               = '',
-  $dirty_writeback_centisecs = '',
-  $external_hook             = '',
-  $hal_disable_polling       = '',
-  $ondemand_powersave_bias   = '',
-  $ondemand_sampling_rate    = '',
-  $ondemand_up_threshold     = '',
-  $power_button_hook         = '',
+  $cpu_governor              = '',
   $power_savings             = '',
-  $read_ahead_kb             = '',
   $sata_alpm                 = '',
+  $hal_disable_polling       = '',
+  $dirty_writeback_centisecs = '',
+  $read_ahead_kb             = '',
 ) {
 
   file { "/etc/pm-profiler/${name}":
@@ -35,7 +30,7 @@ define pm_profiler::pm_config (
 
   file_line { "set_profile_${name}":
     line    => "PM_PROFILER_PROFILE=${name}",
-    path    => '/etc/pm-profiler.conf',
+    target  => '/etc/pm-profiler.conf',
     match   => '^PM_PROFILER_PROFILE\=.*$',
     notify  => Service['pm-profiler'],
     require => [File["/etc/pm-profiler/${name}"],
