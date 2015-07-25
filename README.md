@@ -104,7 +104,7 @@ Overrides are available for:
     * Data Type: `string`
  
   * `read_ahead_kb`: Read ahead size in KB
-    * Defaults to ``
+    * Defaults to Empty String - ``
     * Data Type: `integer`
   
   * `power_savings`: CPU Power Savings
@@ -118,11 +118,11 @@ Overrides are available for:
     * [Detail](http://www.lesswatts.org/tips/disks.php)
   
   * `hal_disable_polling`: Disable polling on drives with removable media
-    * Defaults to ``
+    * Defaults to Empty String - ``
     * Data Type: `integer`
   
   * `dirty_writeback_centisecs`: Kernel buffers writes to files that applications perform for a period of time
-    * Defaults to ``
+    * Defaults to Empty String - ``
     * Data Type: `integer`
   
   * `external_hook`: External script or binary which gets executed at the end of profile activation
@@ -136,11 +136,11 @@ Overrides are available for:
     * Data Type: `string`
 
   * `ondemand_sampling_rate`: Modify kernel default sampling rate value
-    * Defaults to ``
+    * Defaults to Empty String - ``
     * Data Type: `integer`
 
   * `ondemand_powersave_bias`: Lowers the target CPU frequency by a specified percent
-    * Defaults to ``
+    * Defaults to Empty String - ``
     * Configured in units of 0.1%, so it has an effective range of `1` through `1000`, resulting in 0.1% to 100% impact
     * Data Type: `integer`
 
