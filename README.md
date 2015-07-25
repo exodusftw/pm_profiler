@@ -126,11 +126,11 @@ Overrides are available for:
   * `external_hook`: External script or binary which gets executed at the end of profile activation
     * Data Type: `string`
   
-  * `power_button_hook: Command to execute when the power button is pressed and there is no active and running X session`
+  * `power_button_hook`: Command to execute when the power button is pressed and there is no active and running X session
     * Data Type: `string`
   
   * `ondemand_up_threshold`: Defines the time the CPU has to be busy in order to switch up frequencies
-    * Defaults to ``
+    * Defaults to Empty String - ``
     * Data Type: `string`
 
   * `ondemand_sampling_rate`: Modify kernel default sampling rate value
