@@ -110,12 +110,10 @@ Overrides are available for:
   * `power_savings`: CPU Power Savings
     * Defaults to `0`
     * Data Type: `integer`
-    * [Detail](http://www.lesswatts.org/tips/cpu.php)
   
   * `sata_alpm`: SATA Aggressive Link Power Management
     * Valid values: `min_power`, `max_performance`, `medium_power`
     * Data Type: `string`
-    * [Detail](http://www.lesswatts.org/tips/disks.php)
   
   * `hal_disable_polling`: Disable polling on drives with removable media
     * Defaults to Empty String - ``
