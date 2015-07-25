@@ -96,31 +96,53 @@ Overrides are available for:
 * `pm_profiler::pm_config`: Enables creation and application of custom power management profile [Code Detail](https://github.com/exodusftw/puppet-pm-profiler/tree/master/manifests/pm_config.pp)
 * `available type attributes`:
   
-  * `description`: Description of Power Management Profile - Data Type: `string`
+  * `description`: Description of Power Management Profile
+    * Data Type: `string`
   
-  * `cpu_governor`: CPU frequency scaling governor - Valid values: `powersave`, `performance`, `ondemand`, `userspace` - Data Type: `string`
+  * `cpu_governor`: CPU frequency scaling governor
+    * Valid values: `powersave`, `performance`, `ondemand`, `userspace`
+    * Data Type: `string`
  
-  * `read_ahead_kb`: Read ahead size in KB - Defaults to `0` - Data Type: `integer`
+  * `read_ahead_kb`: Read ahead size in KB
+    * Defaults to ``
+    * Data Type: `integer`
   
-  * `power_savings`: CPU Power Savings - Defaults to `0` - Data Type: `integer` - [Detail](http://www.lesswatts.org/tips/cpu.php)
+  * `power_savings`: CPU Power Savings
+    * Defaults to `0`
+    * Data Type: `integer`
+    * [Detail](http://www.lesswatts.org/tips/cpu.php)
   
-  * `sata_alpm`: SATA Aggressive Link Power Management - Valid values: `min_power`, `max_performance`, `medium_power` - Data Type: `string` [Detail](http://www.lesswatts.org/tips/disks.php)
+  * `sata_alpm`: SATA Aggressive Link Power Management
+    * Valid values: `min_power`, `max_performance`, `medium_power`
+    * Data Type: `string`
+    * [Detail](http://www.lesswatts.org/tips/disks.php)
   
-  * `hal_disable_polling`: Disable polling on drives with removable media - Defaults to `0` - Data Type: `integer`
+  * `hal_disable_polling`: Disable polling on drives with removable media
+    * Defaults to ``
+    * Data Type: `integer`
   
-  * `dirty_writeback_centisecs`: Kernel buffers writes to files that applications perform for a period of time - Defaults to `0` - Data Type: `integer`
+  * `dirty_writeback_centisecs`: Kernel buffers writes to files that applications perform for a period of time
+    * Defaults to ``
+    * Data Type: `integer`
   
-  * `external_hook`: External script or binary which gets executed at the end of profile activation - Data Type: `string`
+  * `external_hook`: External script or binary which gets executed at the end of profile activation
+    * Data Type: `string`
   
-  * `power_button_hook: Command to execute when the power button is pressed and there is no active and running X session` - Data Type: `string`
+  * `power_button_hook: Command to execute when the power button is pressed and there is no active and running X session`
+    * Data Type: `string`
   
-  * `ondemand_up_threshold`: Defines the time the CPU has to be busy in order to switch up frequencies - Defaults to `0` - Data Type: `string`
+  * `ondemand_up_threshold`: Defines the time the CPU has to be busy in order to switch up frequencies
+    * Defaults to ``
+    * Data Type: `string`
 
-  * `ondemand_sampling_rate`: Modify kernel default sampling rate value - Defaults to `0` - Data Type: `integer`
+  * `ondemand_sampling_rate`: Modify kernel default sampling rate value
+    * Defaults to ``
+    * Data Type: `integer`
 
-  * `ondemand_powersave_bias`: Lowers the target CPU frequency by a specified percent - Defaults to `1` - Data Type: `integer`
-
+  * `ondemand_powersave_bias`: Lowers the target CPU frequency by a specified percent
+    * Defaults to ``
     * Configured in units of 0.1%, so it has an effective range of `1` through `1000`, resulting in 0.1% to 100% impact
+    * Data Type: `integer`
 
 Example:
 ```puppet
