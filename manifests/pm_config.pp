@@ -14,8 +14,6 @@ define pm_profiler::pm_config (
   $sata_alpm                 = '',
 ) {
 
-  include ::stdlib
-
   #BEGIN PARAMETER VALIDATIONS
   validate_string($name)
 
