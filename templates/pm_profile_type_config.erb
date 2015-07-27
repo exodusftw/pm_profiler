@@ -66,7 +66,11 @@ SATA_ALPM="<%= @sata_alpm %>"
 #
 # Possible values: Full path to executable
 #
-EXTERNAL_HOOK="<%= @external_hook %>"
+<% if @external_hook -%>
+EXTERNAL_HOOK="<%= @external_hook -%>"
+<% else -%>
+EXTERNAL_HOOK=""
+<% end -%>
 
 # Command to execute when the power button is pressed and there is no
 # _active_ and _running_ X session
