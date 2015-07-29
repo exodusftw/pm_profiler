@@ -1,1 +1,1 @@
-include pm-profiler
+include pm_profiler
