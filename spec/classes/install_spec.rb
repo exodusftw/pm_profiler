@@ -2,8 +2,13 @@ require 'spec_helper'
 
 describe 'pm_profiler::install', :type => :class do
   context 'default package on SLES' do
-    it { 
-      should contain_package('pm_profiler').with_ensure('present')
+  let :facts do
+    {
+      :operatingsystem => 'SLES'
+    }
+  end
+  it { 
+      should contain_package('pm-profiler').with( { 'name' => 'pm-profiler' })
       
       should contain_file('/etc/pm-profiler').with({
         'ensure'  => 'directory',
