@@ -7,4 +7,5 @@ class pm_profiler::service (
     ensure => 'running',
     enable => true,
   }
+
 }
