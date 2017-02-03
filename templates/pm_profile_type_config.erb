@@ -4,7 +4,11 @@ NAME="<%= @name %>"
 
 # Short description of the profile, what characteristics it has, etc...
 #
+<% if !@description.nil? -%>
 DESCRIPTION="<%= @description %>"
+<% else -%>
+DESCRIPTION=""
+<% end -%>
 
 # Set the cpu frequency scaling governor
 # Possible values are powersave, performance, ondemand and userspace
@@ -13,7 +17,11 @@ DESCRIPTION="<%= @description %>"
 #
 # File: /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
 #
+<% if !@cpu_governor.nil? -%>
 CPUFREQ_GOVERNOR="<%= @cpu_governor %>"
+<% else -%>
+CPUFREQ_GOVERNOR=""
+<% end -%>
 
 # See http://www.lesswatts.org/tips/cpu.php for a good explanation about
 # what it does
@@ -32,7 +40,11 @@ CPUFREQ_SCHED_MC_POWER_SAVINGS="<%= @power_savings %>"
 #
 # File: /sys/devices/system/cpu/cpu*/cpufreq/ondemand/up_threshold
 #
+<% if !@ondemand_up_threshold.nil? -%>
 CPUFREQ_ONDEMAND_UP_THRESHOLD="<%= @ondemand_up_threshold %>"
+<% else -%>
+CPUFREQ_ONDEMAND_UP_THRESHOLD=""
+<% end -%>
 
 # Generally the kernel sets default values for the sampling rate. For slower
 # operations, set higher sampling range values.
@@ -40,7 +52,11 @@ CPUFREQ_ONDEMAND_UP_THRESHOLD="<%= @ondemand_up_threshold %>"
 #
 # File: /sys/devices/system/cpu/cpu*/cpufreq/ondemand/sampling_rate
 #
+<% if !@ondemand_sampling_rate.nil? -%>
 CPUFREQ_ONDEMAND_SAMPLING_RATE="<%= @ondemand_sampling_rate %>"
+<% else -%>
+CPUFREQ_ONDEMAND_SAMPLING_RATE=""
+<% end -%>
 
 # This will lower the target CPU frequency by a specified percent.
 # powersave_bias is in units of 0.1%, so it has an effective range of 1
@@ -48,7 +64,11 @@ CPUFREQ_ONDEMAND_SAMPLING_RATE="<%= @ondemand_sampling_rate %>"
 #
 # File: /sys/devices/system/cpu/cpu*/cpufreq/ondemand/powersave_bias
 #
+<% if !@ondemand_powersave_bias.nil? -%>
 CPUFREQ_ONDEMAND_POWERSAVE_BIAS="<%= @ondemand_powersave_bias %>"
+<% else -%>
+CPUFREQ_ONDEMAND_POWERSAVE_BIAS=""
+<% end -%>
 
 # Set whether to enable or disable the SATA Aggressive Link Power Management
 # Reference: http://www.lesswatts.org/tips/disks.php
@@ -59,14 +79,18 @@ CPUFREQ_ONDEMAND_POWERSAVE_BIAS="<%= @ondemand_powersave_bias %>"
 #
 # File: /sys/class/scsi_host/host*/link_power_management_policy
 #
+<% if !@sata_alpm.nil? -%>
 SATA_ALPM="<%= @sata_alpm %>"
+<% else -%>
+SATA_ALPM=""
+<% end -%>
 
 # External script or binary which gets executed at the end of profile
 # activation
 #
 # Possible values: Full path to executable
 #
-<% if @external_hook -%>
+<% if !@external_hook.nil? -%>
 EXTERNAL_HOOK="<%= @external_hook -%>"
 <% else -%>
 EXTERNAL_HOOK=""
@@ -77,14 +101,22 @@ EXTERNAL_HOOK=""
 #
 # File: /usr/lib/acpid/power_button
 #
+<% if !@power_button_hook.nil? -%>
 POWER_BUTTON_HOOK="<%= @power_button_hook %>"
+<% else -%>
+POWER_BUTTON_HOOK=""
+<% end -%>
 
 # Disable polling on drives with removable media. Please see the manpage
 # of hal-disable-polling for more information.
 #
 # Possible values: 1/yes, or keep empty
 #
+<% if !@hal_disable_polling.nil? -%>
 HAL_DISABLE_POLLING="<%= @hal_disable_polling %>"
+<% else -%>
+HAL_DISABLE_POLLING=""
+<% end -%>
 
 # Kernel buffers writes to files that applications perform for a period of
 # time.  Kernel default is 500 (5 seconds), a good starting point for
@@ -96,7 +128,11 @@ HAL_DISABLE_POLLING="<%= @hal_disable_polling %>"
 #
 # File: /proc/sys/vm/dirty_writeback_centisecs
 #
+<% if !@dirty_writeback_centisecs.nil? -%>
 DIRTY_WRITEBACK_CENTISECS="<%= @dirty_writeback_centisecs %>"
+<% else -%>
+DIRTY_WRITEBACK_CENTISECS=""
+<% end -%>
 
 # Read-ahead, in kilobytes. You can spin down the disk while playing
 # MP3/OGG by setting the disk readahead to a reasonable size, e.g. 3072 (3
@@ -111,4 +147,8 @@ DIRTY_WRITEBACK_CENTISECS="<%= @dirty_writeback_centisecs %>"
 #
 # File: /sys/block/sd?/queue/read_ahead_kb
 #
+<% if !@read_ahead_kb.nil? -%>
 READ_AHEAD_KB="<%= @read_ahead_kb %>"
+<% else -%>
+READ_AHEAD_KB=""
+<% end -%>
